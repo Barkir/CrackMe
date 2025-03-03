@@ -1,3 +1,12 @@
+### How it patches
+
+it just replaces the ```mov ax, cx``` line with ```xor ax, ax```
+
+this leads to collision in hash count so the hash for your line and password will be always equal zero.
+
+the program will compare them and give you ```whole lotta red rights``` bcs they are equal.
+
+
 ### How this binpatcher works
 ![image](https://github.com/user-attachments/assets/5fdf203a-e86f-495e-bc41-e6a8f49ca365)
 ```
