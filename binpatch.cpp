@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <pthread.h>
 
+#include <stdio.h>
+#include <unistd.h>
+
 const int PATCH_IP = 0x09;
 const int WINDOWX = 300;
 const int WINDOWY = 300;
@@ -229,6 +232,20 @@ int BinPatch(const char * filename)
 
         fclose(file);
         file = fopen(filename, "w+b");
+        system("clear");
+
+        for (int i = 0; i < 10; i++)
+        {
+            printf("choosing the bytes for patching.\n");
+            usleep(100 * 1000);
+            system("clear");
+            printf("choosing the bytes for patching..\n");
+            usleep(100 * 1000);
+            system("clear");
+            printf("choosing the bytes for patching...\n");
+            usleep(100 * 1000);
+            system("clear");
+        }
 
         binBuf[PATCH_IP] = 0x33;
         binBuf[PATCH_IP + 1] = 0xc0;
